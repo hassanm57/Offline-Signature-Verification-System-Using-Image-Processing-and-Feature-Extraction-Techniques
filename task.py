@@ -66,7 +66,7 @@ def count_black_to_white_transitions(img_np, segment):
     for y in range(top, bottom + 1): 
         for x in range(left, right + 1):  
             curr = img_np[y][x]
-            if curr == 255 and prev == 0:
+            if curr == 1 and prev == 0:
                 transitions += 1
             prev = curr
     return transitions
@@ -176,20 +176,21 @@ def calculate_slant(img_np, segment):
     return np.mean(slant_angles)  # average of slant
 
 # Compare skew/slant angles for stability across signatures
+
 ###def compare_angles_across_signatures(angles_list):
-    num_signatures = len(angles_list)
-    num_cells = len(angles_list[0])
+   # num_signatures = len(angles_list)
+    #num_cells = len(angles_list[0])
     
-    stable_cells = [True] * num_cells
+   # stable_cells = [True] * num_cells
     
-    for cell_idx in range(num_cells):
-        first_signature_angle = angles_list[0][cell_idx]
-        for sig_idx in range(1, num_signatures):
-            if abs(angles_list[sig_idx][cell_idx] - first_signature_angle) > 5:  # Threshold for stability
-                stable_cells[cell_idx] = False
-                break
+    #for cell_idx in range(num_cells):
+     #   first_signature_angle = angles_list[0][cell_idx]
+      #  for sig_idx in range(1, num_signatures):
+        #    if abs(angles_list[sig_idx][cell_idx] - first_signature_angle) > 5:  # Threshold for stability
+         #       stable_cells[cell_idx] = False
+         #       break
     
-    return stable_cells
+    #return stable_cells
 
 # save segments
 def save_segmented_images(segments, img_np, folder):
