@@ -1,8 +1,3 @@
-# Offline-Signature-Verification-System-Using-Image-Processing-and-Feature-Extraction-Techniques
-Here's a sample README file for your offline signature verification project:
-
----
-
 # Offline Signature Verification System
 
 ## Overview
